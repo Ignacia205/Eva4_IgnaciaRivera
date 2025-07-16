@@ -1,0 +1,493 @@
+/* Importar fuentes de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap');
+
+/* Variables para colores y fuentes: paleta pastel y de lujo. */
+:root {
+    --primary-color: #B2D8D8; /* Verde menta/agua suave y elegante */
+    --secondary-color: #FFDAB9; /* Rosa melocotón/blush suave */
+    --accent-color: #E0BBE4; /* Lila apagado */
+    --light-bg: #F8F4F4; /* Fondo casi blanco con un toque de rosa/crema */
+    --white-bg: #FFFFFF; /* Blanco puro para elementos clave */
+    --dark-text: #4A4A4A; /* Gris oscuro suave para texto principal */
+    --light-text: #7F7F7F; /* Gris medio para texto secundario */
+    --border-color: #EEEEEE; /* Borde muy sutil */
+    --button-hover: #9DD8D8; /* Tono de verde menta/agua más profundo para hover */
+    --header-text-shadow: rgba(0, 0, 0, 0.1); /* Sombra de texto suave para el header */
+
+    --heading-font: 'Playfair Display', serif; /* Fuente elegante para títulos */
+    --body-font: 'Raleway', sans-serif; /* Fuente limpia y legible para el cuerpo */
+}
+
+body {
+    font-family: var(--body-font);
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 1.125rem; /* Base de tamaño de fuente aumentada */
+}
+
+/* Header (Banner): Diseño principal con gradiente y texto de alto contraste. */
+header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    padding: 4.5rem 2rem;
+    text-align: center;
+    color: var(--white-bg);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.header-content {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.logo a {
+    font-family: var(--heading-font);
+    font-size: 4.8rem; /* Título principal muy grande */
+    font-weight: 700;
+    color: var(--white-bg);
+    text-decoration: none;
+    text-shadow: 2px 2px 4px var(--header-text-shadow);
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: 0.8rem;
+}
+
+.tagline {
+    font-family: var(--body-font);
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--dark-text); /* Texto en gris oscuro para alto contraste */
+    opacity: 1;
+    margin-bottom: 2.5rem;
+    text-shadow: none;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2.8rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--dark-text); /* Enlaces de navegación en gris oscuro para alto contraste */
+    font-weight: 1000;
+    font-size: 1.25rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-shadow: none;
+}
+
+nav ul li a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Contenido Principal: Estructura general de secciones. */
+main {
+    max-width: 1000px;
+    margin: 4rem auto;
+    padding: 0 1.5rem;
+}
+
+/* Diseño de Sección: Centrado de contenido y efectos visuales. */
+section {
+    background-color: var(--white-bg);
+    padding: 4rem;
+    margin-bottom: 4rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    font-family: var(--heading-font);
+    font-size: 3.2rem;
+    color: var(--dark-text);
+    margin-bottom: 2.8rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 0.8rem;
+    width: 100%;
+    max-width: 800px;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 90px;
+    height: 4px;
+    background-color: var(--secondary-color);
+    margin: 0.8rem auto 0;
+    border-radius: 2px;
+}
+
+h3 {
+    font-family: var(--heading-font);
+    font-size: 2.2rem;
+    color: var(--dark-text);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+p {
+    color: var(--light-text);
+    font-size: 1.15rem;
+}
+
+/* Sección Cursos: Tarjetas en columna única y centradas. */
+#cursos {
+    display: flex;
+    flex-direction: column; /* Organiza los cursos en una columna vertical */
+    align-items: center; /* Centra las tarjetas de curso individualmente */
+    gap: 2.5rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.curso {
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 2.5rem;
+    text-align: center;
+    background-color: var(--white-bg);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+.curso:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.curso img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1.8rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.curso h3 {
+    color: var(--dark-text);
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.curso p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.curso strong {
+    color: var(--dark-text);
+}
+
+.curso button {
+    background-color: var(--primary-color);
+    color: var(--dark-text);
+    border: none;
+    padding: 1rem 2.2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.15rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 1.8rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.curso button:hover {
+    background-color: var(--button-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Sección Sucursales: Tarjetas mejoradas y legibles. */
+#sucursales {
+    text-align: center;
+}
+
+
+
+#sucursales ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.sucursal-card {
+    background-color: var(--white-bg);
+    border: 1px solid var(--border-color);
+    padding: 2rem 2rem 2rem 4.8rem; /* Padding izquierdo ajustado para el ícono */
+    border-radius: 10px;
+    font-size: 1.15rem;
+    color: var(--light-text);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 280px;
+    max-width: 320px;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.sucursal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.sucursal-card strong {
+    color: var(--dark-text);
+    display: block;
+    font-size: 1.4rem;
+    margin-bottom: 0.6rem;
+    font-family: var(--heading-font);
+}
+
+.sucursal-card span {
+    display: block;
+}
+
+.sucursal-card::before {
+    content: '📍';
+    font-size: 2rem;
+    line-height: 1;
+    color: var(--secondary-color);
+    position: absolute;
+    top: 2rem;
+    left: 1.5rem;
+    opacity: 0.8;
+}
+
+/* Formulario de Contacto: Diseño limpio y funcional. */
+#contacto form {
+    max-width: 650px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#contacto label {
+    font-weight: 600;
+    color: var(--dark-text);
+    margin-bottom: 0.4rem;
+    display: block;
+    font-size: 1.15rem;
+}
+
+#contacto input[type="text"],
+#contacto input[type="email"],
+#contacto input[type="tel"],
+#contacto select,
+#contacto textarea {
+    width: 100%;
+    padding: 1.1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: var(--body-font);
+    font-size: 1.05rem;
+    box-sizing: border-box;
+    color: var(--dark-text);
+    background-color: var(--light-bg);
+}
+
+#contacto input[type="text"]:focus,
+#contacto input[type="email"]:focus,
+#contacto input[type="tel"]:focus,
+#contacto select:focus,
+#contacto textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 0.25rem rgba(178, 216, 216, 0.4);
+}
+
+#contacto textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+#contacto button[type="submit"] {
+    background-color: var(--primary-color);
+    color: var(--dark-text);
+    border: none;
+    padding: 1.3rem 2.8rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.25rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    align-self: center;
+    margin-top: 2rem;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+#contacto button[type="submit"]:hover {
+    background-color: var(--button-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+}
+
+/* Footer: Fondo oscuro para alto contraste y texto legible. */
+footer {
+    text-align: center;
+    padding: 2.5rem;
+    background-color: #2c3e50; /* Fondo oscuro para alto contraste */
+    color: white;
+    font-size: 1.15rem; /* Fuente más grande para mejor legibilidad */
+    margin-top: 4.5rem;
+    font-weight: 400;
+}
+
+/* Diseño Adaptable (Responsive): Ajustes para diferentes pantallas. */
+@media (max-width: 992px) {
+    main {
+        padding: 0 1rem;
+    }
+    section {
+        padding: 3rem;
+    }
+    h2 {
+        font-size: 2.8rem;
+    }
+    .curso h3 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 1.8rem 1rem;
+    }
+    .logo a {
+        font-size: 3.2rem;
+    }
+    .tagline {
+        font-size: 1.4rem;
+    }
+    nav ul {
+        gap: 1.2rem;
+        margin-top: 1.5rem;
+    }
+    nav ul li a {
+        font-size: 1.1rem;
+        padding: 0.6rem 1rem;
+    }
+    body {
+        font-size: 1rem; /* Base font size un poco menor en celulares (16px) */
+    }
+    main {
+        margin: 2.5rem auto;
+    }
+    section {
+        padding: 2.2rem;
+        margin-bottom: 2.5rem;
+    }
+    h2 {
+        font-size: 2.4rem;
+        margin-bottom: 2rem;
+    }
+    h3 {
+        font-size: 1.6rem;
+    }
+    p {
+        font-size: 1.05rem;
+    }
+    .curso {
+        padding: 1.8rem;
+    }
+    .curso img {
+        height: 160px;
+    }
+    .curso h3 {
+        font-size: 1.4rem;
+    }
+    .curso p {
+        font-size: 0.95rem;
+    }
+    .curso button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+    .sucursal-card {
+        padding: 1.8rem 1.8rem 1.8rem 4rem; /* Ajuste padding-left para celulares */
+    }
+    .sucursal-card::before {
+        top: 1.8rem;
+        left: 1.2rem;
+        font-size: 1.6rem;
+    }
+    .sucursal-card strong {
+        font-size: 1.25rem;
+    }
+    .sucursal-card span {
+        font-size: 1.05rem;
+    }
+    #contacto form {
+        padding: 0 1rem;
+        gap: 1.2rem;
+    }
+    #contacto label {
+        font-size: 1.05rem;
+    }
+    #contacto input[type="text"], #contacto input[type="email"], #contacto input[type="tel"], #contacto select, #contacto textarea {
+        padding: 0.9rem;
+        font-size: 1rem;
+    }
+    #contacto textarea {
+        min-height: 100px;
+    }
+    #contacto button[type="submit"] {
+        padding: 1.1rem 2.2rem;
+        font-size: 1.1rem;
+    }
+    footer {
+        padding: 2rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo a {
+        font-size: 2.8rem;
+        letter-spacing: 0.05em;
+    }
+    .tagline {
+        font-size: 1.1rem;
+    }
+    h2 {
+        font-size: 2.1rem;
+    }
+    h3 {
+        font-size: 1.4rem;
+    }
+}
